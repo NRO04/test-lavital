@@ -1,16 +1,16 @@
-import InjectableService from "../models/injectable-service";
+import { InjectableService } from "../models/injectable-service";
 import RegisterSupplierRepository from "../repository/register-supplier-repository";
 
 export default class RegisterSupplier<DEPENDENCY> implements RegisterSupplierRepository {
 
-    service: InjectableService<DEPENDENCY>[] | InjectableService<DEPENDENCY>;
+    service: any;
 
     constructor(service: InjectableService<DEPENDENCY>) {
 
-        this.service = service;
+        this.service = service.config.injector;
     }
 
-    execute(): any {
+    execute(): DEPENDENCY {
         return this.service;
     }
 
