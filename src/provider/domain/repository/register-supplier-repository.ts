@@ -2,6 +2,6 @@
 
 export default interface RegisterSupplierRepository {
 
-    execute(): void;
+    execute(): any;
 
 }
