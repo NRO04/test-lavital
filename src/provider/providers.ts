@@ -1,17 +1,16 @@
 
+import { SupplierInfo } from "./domain/models/types/supplier/supplier-info-type";
+import ProviderRepository from "./domain/repository/provider-repository";
 import RegisterSupplierRepository from "./domain/repository/register-supplier-repository";
 
-type SupplierInfo = {
-
-    [supplier_name: string]: RegisterSupplierRepository;
-}
 
 
-export class Providers {
+
+export class Providers implements ProviderRepository {
 
     registerSupplier: SupplierInfo = {};
 
-    constructor() {
+    constructor(registerSupplier: SupplierInfo) {
 
     }
 
@@ -19,20 +18,24 @@ export class Providers {
 
     }
 
-    register(registerSupplier: SupplierInfo): void {
-        this.registerSupplier = registerSupplier;
-        console.log("Register Supplier", this.registerSupplier);
+    /*
 
+    register(): void {
+        this.registerSupplier = registerSupplier;
     }
+    */
 
     providingService(supplier_name: string): RegisterSupplierRepository {
         return this.registerSupplier[supplier_name];
     }
 
+    /*
+
     getSupplier(supplier_name: string): RegisterSupplierRepository {
         return this.registerSupplier[supplier_name];
     }
-
+*/
 }
+
 
 
