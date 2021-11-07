@@ -1,13 +1,17 @@
 import { useEffect } from "react";
+import { Providers } from "../../../provider/providers";
 import { OrderService } from "../domain/services/order-service";
+
+const PROVIDER = new Providers();
 
 export default function OrdersModule() {
 
 
-    const SERVICES = { "ORDER-SERVICE": new OrderService }
     useEffect(() => {
 
-        SERVICES["ORDER-SERVICE"].getInvoice("FZ0151010778");
+        console.log(PROVIDER.providingService("ORDER-SERVICE")
+        );
+        //getInvoice("FZ0151010778");
 
     }, []);
 

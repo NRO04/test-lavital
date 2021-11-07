@@ -2,11 +2,10 @@ import axios, { Axios } from "axios";
 import { OrderRepository } from "../repositories/order-repository";
 
 
-
 export class OrderService implements OrderRepository {
 
 
-    http_client: any;
+    http_client: Axios;
 
     constructor() {
 
