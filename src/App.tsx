@@ -1,15 +1,12 @@
 import './App.css';
 import OrdersModule from './modules/orders/insfrastructure';
+import {Header} from "./components/header/Header";
 
 function App() {
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <OrdersModule />
-        RO
-        WELCOME to React.
-      </header>
+    <div className="App-container">
+        <Header/>
     </div>
   );
 
