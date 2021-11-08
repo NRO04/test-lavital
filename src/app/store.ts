@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
+import itemsSlice from '../features/items/items-slice';
 import serviceProviderSlice from '../features/serviceProvider/service-provider-slice';
 
 export const store = configureStore({
 
     reducer: {
         serviceProvider: serviceProviderSlice,
+        items: itemsSlice,
     }
 
 });
