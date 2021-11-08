@@ -9,7 +9,7 @@ export const Header = () => {
             <header className="App-header flex flex-dir-row flex-jt-sp">
 
                 <a href="https://lavital.co/" className="flex">
-                    <img width={130} height={80} src="https://lavital.co/wp-content/uploads/2020/09/logoBlanco.png" alt="" />
+                    <img width={130} height={80} src="https://lavital.co/wp-content/uploads/2020/09/logoBlanco.png" alt="lavital" />
                 </a>
 
                 <nav className="flex flex-dir-row">

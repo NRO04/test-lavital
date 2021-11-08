@@ -4,7 +4,7 @@
 export const Customer = () => {
 
     return (
-        <div className="item" style={{ display: "flex", flexDirection: "column", gap: "30px", padding: "3rem" }}>
+        <div className="flex flex-dir-col gap-30 item" style={{ padding: "3rem" }}>
 
             <div>
                 <h4>INFORMACION DE CLIENTE</h4>
@@ -13,10 +13,10 @@ export const Customer = () => {
 
             <div className="flex flex-dir-col gap-20">
                 <span>
-                    JOSHERT WILMER PARRA CARDONA
+                    # 1143831929
                 </span>
                 <span>
-                    Cedula: 1143831929
+                    JOSHERT WILMER PARRA CARDONA
                 </span>
 
             </div>
@@ -29,13 +29,11 @@ export const Customer = () => {
                     DIRECCION
                 </strong>
                 <span>
-                    KR 54 A # 5 A - 21 <br />
+                    KR 54 A # 5 A - 21 ( Apto 902A)
+                    <br />
                     CALI, VALLE
                 </span>
 
-                <span>
-                    Apto 902A
-                </span>
             </div>
 
         </div>
