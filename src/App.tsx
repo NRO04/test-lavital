@@ -5,6 +5,7 @@ import { Search } from './components/Search/search';
 import { Customer } from './components/customer/Customer';
 import { FlexElement } from './components/layout/Flex-Element';
 import { Items } from './components/orders/Items';
+import { Container } from './components/container/Container';
 
 function App() {
 
@@ -15,8 +16,7 @@ function App() {
       <div style={{ width: "85%", margin: "0 auto", minHeight: "100vh" }}>
         <Search></Search>
 
-        <div style={{ margin: "0", display: "flex", gap: "30px" }}>
-
+        <Container>
 
           <FlexElement flex={2}>
             <Items></Items>
@@ -26,7 +26,7 @@ function App() {
             <Customer></Customer>
           </FlexElement>
 
-        </div>
+        </Container>
       </div >
     </div >
   );
