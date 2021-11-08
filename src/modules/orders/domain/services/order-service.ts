@@ -24,5 +24,18 @@ export class OrderService implements OrderRepository {
         }
 
     }
+    async getItems(id_bill: string): Promise<any> {
+
+        try {
+
+            const response = await this.http_client.get(`https://portal.lavital.co/logistica/v1test/items.php?id=${id_bill}`);
+            return response.data;
+
+        } catch (error) {
+            console.error("ERROR ITEMS", error);
+
+        }
+    }
+
 
 }
