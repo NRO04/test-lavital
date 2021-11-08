@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counter-slice';
 import serviceProviderSlice from '../features/serviceProvider/service-provider-slice';
 
 export const store = configureStore({

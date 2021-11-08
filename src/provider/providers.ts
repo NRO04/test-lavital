@@ -16,12 +16,6 @@ export class Providers implements ProviderRepository {
         return this.registerSupplier[supplier_name];
     }
 
-    /*
-
-    getSupplier(supplier_name: string): RegisterSupplierRepository {
-        return this.registerSupplier[supplier_name];
-    }
-*/
 }
 
 

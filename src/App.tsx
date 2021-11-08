@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import './App.css';
 import OrdersModule from './modules/orders/insfrastructure';
 
@@ -15,6 +14,5 @@ function App() {
   );
 
 }
-
 
 export default App;
