@@ -1,6 +1,6 @@
 
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 export const Header = () => {
 
@@ -21,7 +21,9 @@ export const Header = () => {
                 </nav>
 
                 <div className="flex align-i-center">
-                    <button className="btn">Cerrar Sesion</button>
+                    <button className="btn">
+                        <FontAwesomeIcon icon={faSignOutAlt} />
+                    </button>
                 </div>
 
             </header>
