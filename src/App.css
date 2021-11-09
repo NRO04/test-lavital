@@ -71,7 +71,7 @@
 }
 
 .grid-template-auto-fill-col {
-  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(100rem, 1fr));
 }
 
 .grid-template-col-3 {
