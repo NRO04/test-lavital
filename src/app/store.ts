@@ -1,6 +1,8 @@
 import { configureStore, MiddlewareArray } from '@reduxjs/toolkit';
 import customerSlice from '../features/customer/customer-slice';
 import itemsSlice from '../features/items/items-slice';
+import globalMsgSlice from '../features/msg/global-msg-slice';
+import isLoadComponentSlice from '../features/msg/loadComponents/load-components-slice';
 import searchSlice from '../features/search/search-slice';
 import serviceProviderSlice from '../features/serviceProvider/service-provider-slice';
 
@@ -11,6 +13,8 @@ export const store = configureStore({
         items: itemsSlice,
         search: searchSlice,
         customer: customerSlice,
+        globalMsg: globalMsgSlice,
+        isLoadComponent: isLoadComponentSlice
     }
 
 });

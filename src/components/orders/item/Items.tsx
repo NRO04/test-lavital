@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { loadITems } from "../../../features/items/items-slice";
+import { setMsg } from "../../../features/msg/global-msg-slice";
+import { setIsload } from "../../../features/msg/loadComponents/load-components-slice";
 import FormDialog from "../../dialog/Dialog";
 import { ItemsSchema } from "./item-schema";
 
@@ -9,18 +11,7 @@ export const Items = () => {
 
     const ITEMS = useAppSelector(({ items }) => items.value); //Redux state Selector
     const searchValue = useAppSelector(({ search }) => search.value); //Redux state Selector
-    const PROVIDER = useAppSelector(({ serviceProvider }) => serviceProvider.value);
-    const dispatch = useAppDispatch()
-
-    const getItems = async () => {
-
-        const data = await PROVIDER.providingService("ORDER-SERVICE").execute().getItems(searchValue);
-        dispatch(loadITems(data));
-    }
-
-    useEffect(() => {
-        getItems();
-    }, [searchValue]);
+    const dispatch = useAppDispatch();
 
 
     return (
@@ -56,9 +47,9 @@ export const Items = () => {
 
                             </div>
 
-                            <div style={{ display: "inline-flex" }}>
+                            <div className="flex flex-dir-col jc-center align-i-center">
                                 <div>
-                                    {shelf_location_code}
+                                    Estantería: {shelf_location_code}
                                 </div>
                             </div>
 
@@ -66,7 +57,6 @@ export const Items = () => {
                     </div>
                 ))
                 }
-
 
             </div>
         </>
