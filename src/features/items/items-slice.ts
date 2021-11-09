@@ -1,14 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { ItemsSchema } from "../../components/orders/item/item-schema";
 
 
 export interface ItemsState {
-    value: Array<object>;
+    value: Array<ItemsSchema>;
 }
 
 
 const initialState: ItemsState = {
 
-    value: [{ "name": "RO", "value": "RO" }, { "name": "US", "value": "US" }]
+    value: []
 }
 
 
@@ -18,7 +19,7 @@ export const itemsSlice = createSlice({
     initialState,
     reducers: {
 
-        loadITems: (state, action: PayloadAction<Array<object>>) => {
+        loadITems: (state, action: PayloadAction<Array<ItemsSchema>>) => {
             state.value = action.payload;
         }
     }

@@ -1,23 +1,24 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { loadITems } from "../../features/items/items-slice";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { loadITems } from "../../../features/items/items-slice";
+import { ItemsSchema } from "./item-schema";
 
 
 export const Items = () => {
     const ITEMS = useAppSelector(({ items }) => items.value);
+    const searchValue = useAppSelector(({ search }) => search.value);
     const PROVIDER = useAppSelector(({ serviceProvider }) => serviceProvider.value);
     const dispatch = useAppDispatch()
 
     const getItems = async () => {
 
-        const data = await PROVIDER.providingService("ORDER-SERVICE").execute().getItems("FZ0151001985");
+        const data = await PROVIDER.providingService("ORDER-SERVICE").execute().getItems(searchValue);
         dispatch(loadITems(data));
-        console.log(data);
     }
 
     useEffect(() => {
         getItems();
-    }, []);
+    }, [searchValue]);
 
 
     return (
@@ -25,8 +26,8 @@ export const Items = () => {
             <div className="flex flex-dir-col gap-20 pd-40 item">
                 <h4>ITEMS</h4>
 
-                {ITEMS.map((item, index) => (
-                    <div className="flex row gap-40" style={{ borderRadius: "15px", backgroundColor: "#faf7fa" }}>
+                {ITEMS ? ITEMS.map(({ item_name, id_item, shelf_location_code }: ItemsSchema, index: number) => (
+                    <div className="flex row gap-40" style={{ borderRadius: "15px", backgroundColor: "#faf7fa" }} key={index}>
 
                         <div className="flex jc-center align-i-center">
                             <img alt="Sin imagen" />
@@ -37,11 +38,11 @@ export const Items = () => {
                             <div className="flex flex-dir-col pd-30 gap-10">
                                 <div>
                                     <strong>
-                                        NOMBRE DE ITEM
+                                        {item_name}
                                     </strong>
                                 </div>
                                 <h4>
-                                    ID ITEM: 585454
+                                    ID ITEM: {id_item}
                                 </h4>
                                 <strong>
 
@@ -54,7 +55,7 @@ export const Items = () => {
 
                             <div style={{ display: "inline-flex" }}>
                                 <div>
-                                    CODIGO UBICACION DE ESTANTERIA
+                                    {shelf_location_code}
                                 </div>
                             </div>
 
@@ -62,7 +63,10 @@ export const Items = () => {
 
 
                     </div>
-                ))}
+                )) :
+                    <div>Loading...</div>
+                }
+
 
             </div>
         </>

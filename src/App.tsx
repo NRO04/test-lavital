@@ -4,7 +4,7 @@ import { Header } from "./components/header/Header";
 import { Search } from './components/Search/search';
 import { Customer } from './components/customer/Customer';
 import { FlexElement } from './components/layout/Flex-Element';
-import { Items } from './components/orders/Items';
+import { Items } from './components/orders/item/Items';
 import { Container } from './components/container/Container';
 
 function App() {

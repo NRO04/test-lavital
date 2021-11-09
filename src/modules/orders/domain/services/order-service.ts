@@ -17,6 +17,7 @@ export class OrderService implements OrderRepository {
         try {
 
             const response = await this.http_client.get(`https://portal.lavital.co/logistica/v1test/factura.php?id=${id}`);
+            console.log(response.data);
             return response.data;
 
         } catch (error) {
@@ -29,6 +30,7 @@ export class OrderService implements OrderRepository {
         try {
 
             const response = await this.http_client.get(`https://portal.lavital.co/logistica/v1test/items.php?id=${id_bill}`);
+            console.log(response.data);
             return response.data;
 
         } catch (error) {
