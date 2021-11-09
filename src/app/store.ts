@@ -1,4 +1,5 @@
 import { configureStore, MiddlewareArray } from '@reduxjs/toolkit';
+import customerSlice from '../features/customer/customer-slice';
 import itemsSlice from '../features/items/items-slice';
 import searchSlice from '../features/search/search-slice';
 import serviceProviderSlice from '../features/serviceProvider/service-provider-slice';
@@ -8,7 +9,8 @@ export const store = configureStore({
     reducer: {
         serviceProvider: serviceProviderSlice,
         items: itemsSlice,
-        search: searchSlice
+        search: searchSlice,
+        customer: customerSlice,
     }
 
 });

@@ -6,12 +6,10 @@ export interface ItemsState {
     value: Array<ItemsSchema>;
 }
 
-
 const initialState: ItemsState = {
 
     value: []
 }
-
 
 export const itemsSlice = createSlice({
 

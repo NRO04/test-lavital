@@ -5,8 +5,9 @@ import { ItemsSchema } from "./item-schema";
 
 
 export const Items = () => {
-    const ITEMS = useAppSelector(({ items }) => items.value);
-    const searchValue = useAppSelector(({ search }) => search.value);
+
+    const ITEMS = useAppSelector(({ items }) => items.value); //Redux state Selector
+    const searchValue = useAppSelector(({ search }) => search.value); //Redux state Selector
     const PROVIDER = useAppSelector(({ serviceProvider }) => serviceProvider.value);
     const dispatch = useAppDispatch()
 
@@ -49,7 +50,6 @@ export const Items = () => {
                                     # ID ITEM
 
                                 </strong>
-
 
                             </div>
 

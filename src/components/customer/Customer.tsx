@@ -1,22 +1,43 @@
-
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { setCustomer } from "../../features/customer/customer-slice";
 
 
 export const Customer = () => {
 
+
+    const { id_customer, name_customer, shipping_address, shipping_address_complement, city, department } = useAppSelector(({ customer }) => customer.value);
+
+    const PROVIDER = useAppSelector(({ serviceProvider }) => serviceProvider.value);
+    const search = useAppSelector(({ search }) => search.value);
+    const dispatch = useAppDispatch();
+
+    const getCustomer = async () => {
+
+        /*
+        */
+        const response = await PROVIDER.providingService("ORDER-SERVICE").execute().getInvoice(search);
+        dispatch(setCustomer({ value: response }));
+    }
+
+    useEffect(() => {
+        getCustomer();
+    }, [search]);
+
     return (
         <div className="flex flex-dir-col gap-30 item" style={{ padding: "3rem" }}>
-
             <div>
                 <h4>INFORMACION DE CLIENTE</h4>
+
             </div>
             <hr />
 
             <div className="flex flex-dir-col gap-20">
                 <span>
-                    # 1143831929
+                    # {id_customer}
                 </span>
                 <span>
-                    JOSHERT WILMER PARRA CARDONA
+                    {name_customer}
                 </span>
 
             </div>
@@ -29,13 +50,12 @@ export const Customer = () => {
                     DIRECCION
                 </strong>
                 <span>
-                    KR 54 A # 5 A - 21 ( Apto 902A)
+                    {shipping_address} ( {shipping_address_complement} )
                     <br />
-                    CALI, VALLE
+                    {city}, {department}
                 </span>
 
             </div>
-
         </div>
     );
 }

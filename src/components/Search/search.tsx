@@ -4,9 +4,6 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { query } from "../../features/search/search-slice";
 
 
-
-
-
 export const Search = () => {
 
     const SEARCH = useAppSelector(({ search }) => search.value);
