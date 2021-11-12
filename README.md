@@ -33,6 +33,7 @@ docker run -dp 3001:3000 nro04/la-vital
 ```
 Asegurese que en el puerto 3001 no se este ejecutando ningun servicio, de lo contrario cambie el puerto 3001 -> 3005
 
+Abrir http://localhost:3000/ para ver el resultado del proyecto-
 
 # Forma Nº 2
 
